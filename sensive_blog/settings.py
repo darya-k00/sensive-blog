@@ -20,7 +20,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'debug_toolbar'
+    'debug_toolbar',
     'blog',
 ]
 
@@ -102,5 +102,7 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 INTERNAL_IPS = [
-    "127.0.0.1"
+    # ...
+    '127.0.0.1',
+    # ...
 ]
