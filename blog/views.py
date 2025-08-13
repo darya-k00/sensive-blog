@@ -4,15 +4,13 @@ from django.db.models import Count
 
 
 def most_popular_posts():
-    popular_posts = Post.objects.popular()[:5]
-    return popular_posts.fetch_with_comments_count()
+    return Post.objects.popular()[:5].fetch_with_comments_count()
 
 
 def most_fresh_posts():
-    fresh_posts = Post.objects.fetch_with_comments_count().order_by(
+    return (Post.objects.fetch_with_comments_count().order_by(
         '-published_at'
-        ).select_related('author')
-    return fresh_posts[:5]
+        ).select_related('author')[:5])
 
 
 def most_popular_tags():
